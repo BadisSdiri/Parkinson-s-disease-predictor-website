@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease Predictor</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<!-- Background Video -->
+<video autoplay loop muted id="background-video">
+    <source src="DNA-animation.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- University Logo in Top Right -->
+<img src="university-logo.jpg" alt="University Logo" class="university-logo">
+
+<!-- Welcome Page -->
+<div id="welcome" class="welcome-page">
+    <div class="welcome-message">
+        <h1>Welcome to Parkinson's Disease Predictor</h1>
+        <button id="go-to-next" class="go-to-next">Go to Next Page</button>
+    </div>
+
+    <!-- About Us Section (Left Part) -->
+    <div class="about-us">
+        <button id="about-us-btn" class="about-us-btn">About Us</button>
+        <div id="about-us-links" class="about-us-links">
+            <a href="http://www.enicarthage.rnu.tn/" target="_blank">Enicar</a>
+            <a href="https://www.linkedin.com/in/badis-sdiri" target="_blank">The Creator</a>
+        </div>
+    </div>
+</div>
+
+<!-- Input Page -->
+<div id="input-page" class="page">
+    <div class="container">
+        <h2>Enter a DNA sequence of exactly 100 nucleotides:</h2>
+        <input type="text" id="sequence" placeholder="Enter DNA sequence" maxlength="100">
+        <p id="sequence-error" style="color: red; display: none;">
+            Error: The DNA sequence must be exactly 100 nucleotides long and contain only A, T, C, or G.
+        </p>
+
+        <h3>Select FCGR Size:</h3>
+        <select id="fcgr-size">
+            <option value="3">FCGR Size 3</option>
+            <option value="6">FCGR Size 6</option>
+        </select>
+
+        <button id="predict-btn">Generate Prediction</button>
+    </div>
+</div>
+
+<!-- Results Page -->
+<div id="results-page" class="page">
+    <div class="container">
+        <h2>Prediction and FCGR Representation</h2>
+        <p><strong>Prediction:</strong> <span id="prediction-result"></span></p>
+        <h3>FCGR Representation:</h3>
+        <canvas id="fcgr-canvas" width="400" height="400" style="border: 1px solid #000;"></canvas>
+        <button id="back-btn">Go Back</button>
+    </div>
+</div>
+
+<!-- Output Page -->
+<div id="output-page" class="page">
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <p><strong>Prediction:</strong> <span id="final-prediction"></span></p>
+        <button id="go-back-to-input">Go Back to Input</button>
+    </div>
+</div>
+
+<!-- Footer Text -->
+<div class="footer-text">Created by Badis Sdiri</div>
+
+<script src="script.js"></script>
+</body>
+</html>
